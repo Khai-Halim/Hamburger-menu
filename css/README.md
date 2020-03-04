@@ -1,0 +1,1 @@
+Creating a main navigation that turns the menu into a hamburger icon in mobile view.
