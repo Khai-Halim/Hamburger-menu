@@ -30,25 +30,106 @@
   color: white;
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   font-size: 1.3rem;
+  position: relative;
+  padding: 17px 0;
 }
 
-#header ul {
+#header #checkbox {
+  display: none;
+}
+
+#header #checkbox:checked ~ #nav {
+  display: block;
+}
+
+#header #label {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+
+#header #label > span {
+  display: block;
+  margin: 20px 0;
+  height: 3px;
+  width: 40px;
+  background: black;
+}
+
+#header #label > span::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background: black;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+#header #label > span::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background: black;
+  -webkit-transform: translateY(-13px);
+          transform: translateY(-13px);
+}
+
+#header #nav {
+  height: initial;
+}
+
+#header #nav ul {
+  position: relative;
   list-style: none;
 }
 
-#header ul li {
+#header #nav ul li {
   display: inline-block;
 }
 
-#header ul li a {
+#header #nav ul li a {
   display: inline-block;
   text-decoration: none;
   color: white;
   padding: 20px 4px;
   margin-left: 10px;
+}
+
+#banner {
+  height: 50vh;
+  background: green;
+}
+
+/***** MEDIA QUERIES TABLET & MOBILE ****/
+@media (max-width: 800px) {
+  #header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #header #logo {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  #header #label {
+    display: block;
+  }
+  #header #nav {
+    display: none;
+    pointer-events: none;
+  }
+  #header #nav ul li {
+    display: block;
+    text-align: center;
+  }
+  #header #nav ul li a {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
